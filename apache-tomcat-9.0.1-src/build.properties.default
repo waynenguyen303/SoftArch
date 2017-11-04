@@ -210,3 +210,8 @@ findbugs.home=${base.path}/findbugs-${findbugs.version}
 findbugs.lib=${findbugs.home}/lib
 findbugs.jar=${findbugs.lib}/findbugs-ant.jar
 findbugs.loc=${base-sf.loc}/project/findbugs/findbugs/${findbugs.version}/findbugs-${findbugs.version}.tar.gz
+
+# ----- Default Base Path for Dependent Packages -----
+# Replace this path with the directory path where dependencies binaries
+# should be downloaded
+base.path=\apache_tomcat_dependencies
