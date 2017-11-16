@@ -8,12 +8,12 @@ import edu.uci.isr.myx.fw.MyxUtils;
 import edu.umkc.chatsys.IChat;
 import edu.umkc.chatsys.IChatListener;
 
-public class ChatClientArch extends AbstractMyxSimpleBrick implements IChat
+public class ChatClientArch extends AbstractMyxSimpleBrick implements IChatListener
 {
-    public static final IMyxName msg_IChat = MyxUtils.createName("edu.umkc.chatsys.IChat");
     public static final IMyxName msg_IChatListener = MyxUtils.createName("edu.umkc.chatsys.IChatListener");
+    public static final IMyxName msg_IChat = MyxUtils.createName("edu.umkc.chatsys.IChat");
 
-    public IChatListener OUT_IChatListener;
+    public IChat OUT_IChat;
 
 	private IChatClientImp _imp;
 
@@ -40,9 +40,9 @@ public class ChatClientArch extends AbstractMyxSimpleBrick implements IChat
     }
     
     public void begin(){
-        OUT_IChatListener = (IChatListener) MyxUtils.getFirstRequiredServiceObject(this,msg_IChatListener);
-        if (OUT_IChatListener == null){
- 			System.err.println("Error: Interface edu.umkc.chatsys.IChatListener returned null");
+        OUT_IChat = (IChat) MyxUtils.getFirstRequiredServiceObject(this,msg_IChat);
+        if (OUT_IChat == null){
+ 			System.err.println("Error: Interface edu.umkc.chatsys.IChat returned null");
 			return;       
         }
         _imp.begin();
@@ -57,14 +57,14 @@ public class ChatClientArch extends AbstractMyxSimpleBrick implements IChat
     }
     
 	public Object getServiceObject(IMyxName arg0) {
-		if (arg0.equals(msg_IChat)){
+		if (arg0.equals(msg_IChatListener)){
 			return this;
 		}        
 		return null;
 	}
   
     
-    public void sendMessage (String sender,String message)   {
-		_imp.sendMessage(sender,message);
+    public void messageSent (String sender,String message)   {
+		_imp.messageSent(sender,message);
     }    
 }

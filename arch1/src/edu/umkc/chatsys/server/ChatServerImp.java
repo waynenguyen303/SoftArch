@@ -39,9 +39,8 @@ public class ChatServerImp implements IChatServerImp
   
     
     public void sendMessage (String sender,String message)   {
-		//TODO Auto-generated method stub
-		if (_arch.OUT_IChatListener != null) {
-			_arch.OUT_IChatListener.messageSent(sender, message);
-		}
+    	if (_arch.OUT_IChatListener != null){
+			 _arch.OUT_IChatListener.messageSent(sender, message);
+	 	 }
     }
 }

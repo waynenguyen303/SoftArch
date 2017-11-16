@@ -2961,7 +2961,7 @@ Read the Building page on the Apache Tomcat documentation site for details on ho
 
   <!-- Helper target, used to create a detached ascii OpenPGP signature.     -->
   <!-- Uses GPG with default key. Requires 'file' as a parameter. Only       -->
-  <!-- executes if gpg passphrase is set which is only set when using the    -->
+  <!-- executes if gpg passphrase is set which is only aset when using the    -->
   <!-- release target.                                                       -->
   <target name="sign" if="gpg.passphrase">
     <fail unless="file" />

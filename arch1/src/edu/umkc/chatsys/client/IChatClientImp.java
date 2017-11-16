@@ -26,5 +26,5 @@ public interface IChatClientImp
 	*/
   
     
-    public void sendMessage (String sender,String message)  ;        
+    public void messageSent (String sender,String message)  ;        
 }

@@ -35,13 +35,10 @@ public class ChatClientImp extends JFrame implements ActionListener, IChatClient
 		return _arch;
 	}
   
-	/*
-   Myx Lifecycle Methods: these methods are called automatically by the framework
-   as the bricks are created, attached, detached, and destroyed respectively.
-   */
 	public void init(){
     //TODO Auto-generated method stub
 	}
+	
 	public void begin(){
 		transcriptBuf = new StringBuffer();
 		transcript = new JTextArea();
@@ -87,7 +84,7 @@ public class ChatClientImp extends JFrame implements ActionListener, IChatClient
 	public void actionPerformed(ActionEvent arg0) {
 		String text = entryField.getText();
 		if(!text.equals("")){
-			//_arch.msg_IChat.notify(getTitle(), text);
+			_arch.OUT_IChat.sendMessage(getTitle(), text);
 		}
 	}
 	
@@ -95,12 +92,6 @@ public class ChatClientImp extends JFrame implements ActionListener, IChatClient
 		transcriptBuf.append(text);
 		transcriptBuf.append(System.getProperty("line.separator"));
 		transcript.setText(transcriptBuf.toString());
-	}
-
-	@Override
-	public void sendMessage(String sender, String message) {
-		// TODO Auto-generated method stub
-		
 	}
 }
 
