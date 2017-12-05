@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Tomcat_v1
-Bundle-SymbolicName: tomcat_v1
-Bundle-Version: 1.0.0.qualifier
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: edu.uci.isr.myx.fw;bundle-version="4.1.50"
